@@ -1,0 +1,90 @@
+/* ✅ Full ChatGPT-style Layout */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #343541;
+    color: white;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* ✅ Chat Messages (Like ChatGPT) */
+  .chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #343541;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ✅ Message Bubble Styling */
+  .chat-message {
+    max-width: 75%;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  /* ✅ User Message (Right) */
+  .chat-message.user {
+    background-color: #10a37f;
+    color: white;
+    align-self: flex-end;
+  }
+  
+  /* ✅ Bot Message (Left) */
+  .chat-message.bot {
+    background-color: #444654;
+    color: white;
+    align-self: flex-start;
+  }
+  
+  /* ✅ Chat Input (Bottom Bar) */
+  .chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    background-color: #40414f;
+    border-top: 1px solid #444654;
+  }
+  
+  /* ✅ Input Field */
+  .chat-input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #575863;
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  /* ✅ Send Button */
+  .send-btn {
+    background-color: #10a37f;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .send-btn:hover {
+    background-color: #0d8463;
+  }
+  
+  /* ✅ Mobile-Responsive */
+  @media (max-width: 600px) {
+    .chat-input-area {
+      padding: 12px;
+    }
+    .chat-input {
+      font-size: 14px;
+    }
+  }
+  

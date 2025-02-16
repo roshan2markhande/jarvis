@@ -1,0 +1,119 @@
+/* ✅ Home Page Layout (ChatGPT Style) */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #343541;
+    color: white;
+  }
+  
+  /* ✅ Header (Top Bar) */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #202123;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* ✅ Logout Button */
+  .logout-btn {
+    background-color: #ff4b4b;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .logout-btn:hover {
+    background-color: #ff3030;
+  }
+  
+  /* ✅ Full Chat History (Like ChatGPT) */
+  .chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* ✅ User & AI Message Styles */
+  .message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .message.user {
+    align-self: flex-end;
+    background: #0a84ff;
+    color: white;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background: #444654;
+    color: white;
+  }
+  
+  /* ✅ Chat Input at Bottom */
+  .chat-input {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #202123;
+  }
+  
+  /* ✅ ChatBox & Mic */
+  .chatbox-container {
+    flex: 1;
+    display: flex;
+    background: #343541;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  .chatbox-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    background: none;
+    color: white;
+  }
+  
+  .send-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .send-btn:hover {
+    color: #0a84ff;
+  }
+  
+  /* ✅ Mic Button (Fixed Position) */
+  .mic-button {
+    background-color: #444654;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .mic-button:hover {
+    background-color: #55575c;
+  }
+  
