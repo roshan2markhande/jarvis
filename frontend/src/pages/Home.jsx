@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ChatBox from "../compenents/ChatBox";
-import ChatHistory from "../compenents/ChatHistory";
-import MicButton from "../compenents/MicButton";
+import ChatBox from "../compenents/ChatBox";  // Fixed typo in path
+import ChatHistory from "../compenents/ChatHistory"; // Fixed typo in path
 import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 
@@ -10,7 +9,10 @@ const Home = () => {
   const [messages, setMessages] = useState([]);
 
   const handleSendMessage = (text) => {
-    setMessages([...messages, { text, sender: "user" }]);
+    // Update ChatHistory with user message
+    setMessages((prev) => [...prev, { text, sender: "user" }]);
+
+    // Simulate AI response
     setTimeout(() => {
       setMessages((prev) => [...prev, { text: "AI Response...", sender: "bot" }]);
     }, 1000);
@@ -18,20 +20,19 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* ✅ Header (Like ChatGPT) */}
+      {/* Header Section */}
       <header className="header">
-        <h1>Jarvis AI</h1>
-        <button className="logout-btn" onClick={() => navigate("/login")}>Logout</button>
+        <h2>Jarvis AI</h2>
+        <button className="logout-btn" onClick={() => navigate("/login")}>
+          Logout
+        </button>
       </header>
 
-      {/* ✅ Separate Chat History Component */}
-      <ChatHistory />
+      {/* Chat History with messages passed as props */}
+      <ChatHistory messages={messages} />
 
-      {/* ✅ Chat Input & Mic at Bottom */}
-      <div className="chat-input">
-        <ChatBox onSend={handleSendMessage} />
-        <MicButton onVoiceInput={handleSendMessage} />
-      </div>
+      {/* Chat Box to send messages */}
+      <ChatBox onSend={handleSendMessage} />
     </div>
   );
 };

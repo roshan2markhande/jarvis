@@ -1,0 +1,35 @@
+.face-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.camera-view {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.start-btn, .capture-btn {
+  padding: 8px 12px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+}

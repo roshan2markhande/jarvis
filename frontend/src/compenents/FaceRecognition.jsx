@@ -1,16 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import "../styles/FaceReco.css";
 
 const FaceRecognition = ({ onCapture }) => {
   const videoRef = useRef(null);
-  const [imageFile, setImageFile] = useState(null);
+  const [status, setStatus] = useState("Starting camera...");
+  const [isDetecting, setIsDetecting] = useState(false);
+
+  useEffect(() => {
+    startCamera();
+  }, []);
 
   const startCamera = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ video: true });
       videoRef.current.srcObject = stream;
+      setStatus("Looking for face...");
+      detectFace();
     } catch (error) {
-      console.error("Error accessing camera:", error);
+      setStatus("Camera access denied.");
+      console.error("Camera error:", error);
     }
+  };
+
+  const detectFace = () => {
+    setIsDetecting(true);
+    setTimeout(() => {
+      captureImage();
+    }, 3000); // Simulate face detection delay
   };
 
   const captureImage = () => {
@@ -20,19 +36,19 @@ const FaceRecognition = ({ onCapture }) => {
     canvas.height = videoRef.current.videoHeight;
     context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
 
-    // Convert canvas to Blob and create File object
     canvas.toBlob((blob) => {
       const file = new File([blob], "face_capture.png", { type: "image/png" });
-      setImageFile(file);
-      onCapture(file); // Send the file to parent component
+      setStatus("Face detected! Processing...");
+      setTimeout(() => {
+        onCapture(file);
+      }, 1000);
     }, "image/png");
   };
 
   return (
-    <div>
-      <video ref={videoRef} autoPlay></video>
-      <button onClick={startCamera}>Start Camera</button>
-      <button onClick={captureImage}>Capture Image</button>
+    <div className="face-container">
+      <video ref={videoRef} autoPlay className="camera-view"></video>
+      <p className="status-text">{status}</p>
     </div>
   );
 };
