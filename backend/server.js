@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 app.use("/api/face", faceRoutes);
 app.use("/api/chat", chatRoutes);
-app.use("/api/command", commandRoutes);
+app.use(commandRoutes);
 
 const PORT = process.env.PORT || 5000;
 

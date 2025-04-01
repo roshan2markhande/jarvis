@@ -1,7 +1,7 @@
-import express from "express";
-import { executeCommand } from "../controllers/commandController.js";
+import { Router } from 'express';
+const router = Router();
+import { executeCommand } from '../controllers/commandController.js';
 
-const router = express.Router();
-router.post("/", executeCommand);
+router.post('/api/execute-command', executeCommand);
 
 export default router;

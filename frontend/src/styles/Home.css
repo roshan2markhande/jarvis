@@ -36,17 +36,34 @@
   color: #333;
 }
 
-.logout-btn {
+/* .logout-btn {
   background: #ff4d4d;
   color: white;
   border: none;
-  padding: 6px 10px; /* Smaller button */
+  padding: 6px 10px; 
   font-size: 0.8rem;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+} */
+
+/* .logout-btn:hover {
+  background: #e60000;
+} */
+.mic-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mic-button:hover {
+  background: #0056b3;
 }
 
-.logout-btn:hover {
-  background: #e60000;
+.mic-button.listening {
+  background: red;
+  animation: pulse 1s infinite;
 }

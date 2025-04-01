@@ -20,13 +20,13 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Header Section */}
-      <header className="header">
+     
+      {/* <header className="header">
         <h2>Jarvis AI</h2>
         <button className="logout-btn" onClick={() => navigate("/login")}>
           Logout
         </button>
-      </header>
+      </header> */}
 
       {/* Chat History with messages passed as props */}
       <ChatHistory messages={messages} />
